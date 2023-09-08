@@ -1,0 +1,20 @@
+/*Here, we will implement the css component of our search bar*/
+input[type=text] {
+    width: 130px;  /*Default size was 130px, make this bigger to ensure it looks correct and in accordance to the design of the website*/
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('https://e7.pngegg.com/pngimages/629/480/png-clipart-gray-magnifying-glass-illustration-cartoon-search-icon-icons-logos-emojis-search.png');
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+    margin-left: 25%;
+}
+
+input[type=text]:focus {
+    width: 40%;
+}

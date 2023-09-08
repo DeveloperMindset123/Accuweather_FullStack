@@ -1,0 +1,77 @@
+/*HTML Tag Coding*/
+body {
+  font-family: "Lato", sans-serif;
+}
+
+button {
+  float: right;
+  margin-right: 25%;
+  margin-top: 20px;
+}
+
+
+.sidepanel  {
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  height: auto;
+  top: 0;
+  right: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidepanel a {
+  padding: 8px 8px 8px 50px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+  padding-bottom: 25px;
+}
+
+.sidepanel a:hover {
+  color: #f1f1f1;
+}
+
+.sidepanel .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+}
+
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #111;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+}
+
+.openbtn:hover {
+  background-color:#444;
+}
+
+/*ID based coding*/
+#web-logo {
+  width: 100px;
+  height: 100px;
+  margin-left: 25%;
+  border-radius: 100%;
+}
+
+#web-logo:hover {
+  -webkit-box-shadow: 0px 0px 100px 0px rgba(255, 165, 0, 1);
+  -moz-box-shadow: 0px 0px 100px 0px rgba(255, 165, 0, 1); 
+  box-shadow: 0px 0px 100px 0px rgba(255, 165, 0, 1); 
+  background: white;
+  background-color: transparent;
+}
+
+
+
