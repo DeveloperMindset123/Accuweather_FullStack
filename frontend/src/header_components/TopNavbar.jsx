@@ -18,8 +18,8 @@ const TopNavbar = () => {
   
   document.body.style.backgroundImage = `url(${selectedImage})`;
   document.body.style.backgroundRepeat = "no-repeat";
-  document.body.style.backgroundSize="cover";
-  document.body.style.height="350px";
+  //document.body.style.backgroundSize="cover";  --> this was updated in the css section
+  document.body.style.height="100%";
   document.body.style.width="100%";
   
   //define the toggle open function, to display the content within the navbar

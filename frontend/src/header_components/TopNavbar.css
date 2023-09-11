@@ -1,7 +1,15 @@
 /*HTML Tag Coding*/
 body {
   font-family: "Lato", sans-serif;
+  background-size: cover;
 }
+
+@media (max-width: 968px) {
+  body {  /*Finally fixed the issue regarding the web responsiveness*/
+    background-size: auto;
+    orientation: landscape;
+  }
+} 
 
 button {
   float: right;
@@ -14,7 +22,7 @@ button {
   width: 0;
   position: fixed;
   z-index: 1;
-  height: auto;
+  height: 80%;
   top: 0;
   right: 0;
   background-color: #111;
@@ -26,13 +34,30 @@ button {
 .sidepanel a {
   padding: 8px 8px 8px 50px;
   text-decoration: none;
-  font-size: 25px;
+  font-size: 1.5em;
   color: #818181;
   display: block;
   transition: 0.3s;
   padding-bottom: 25px;
+  height: fit-content;
 }
 
+@media (max-width: 968px) {
+  .sidepanel a {
+    font-size: 1.2em;
+  }
+  #mySidePanel {
+    width: 15%;
+  }
+}
+@media (max-width: 500px) {
+  .sidepanel a {
+    font-size: 1em;
+  }
+  #mySidePanel {
+    padding-right: -30%;
+  }
+}
 .sidepanel a:hover {
   color: #f1f1f1;
 }

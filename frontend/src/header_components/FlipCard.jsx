@@ -1,27 +1,63 @@
 import React, { useState } from 'react';
-import {
-    card,
-    container,
-    flex,
-    h1,
-    img,
-    p,
-    button,
-    hover,
-} from 'tailwindcss';
+import ReactCardFlip from "react-card-flip";
 
-export const FlipCard = () => {
-  const [locations, useLocations] = useState([
-    //for now, these are placeholders, when implementing the backend components, the cards will be changed
-    {
-      name: "New York City",  //consider implementing an image component later, very complex taking into consideration the location could be anywhere and the associated image needs to be represented with the associated area, look into this when reviewing the frontend components once the development is complete
-      temperature: 75,
-      realFeel: 
-      
-    }
-  ])
+const FlipCard = ({card}) => {
+  const [flip, setFlip] = useState(false);
 
   return (
-    <div></div>
-  )
-}
+    <ReactCardFlip isFlipped={flip} 
+      flipDirection="vertical"
+    >
+      <div style={{
+        width: "300px",
+        height: "200px",
+        background: "#d7fbda",
+        fontSize: '40px',
+        color: 'green',
+        margin: '20px',
+        marginTop: '10px',
+        borderRadius: '4px',
+        textAlign: 'center',
+        padding: '20px',
+      }}>
+        New York<br /><br /> {/**Note: We will need to change the value that is shown here to represent the location of the user at a later time
+         */}
+        <button style={{
+          width: '150px',
+          padding: '10px',
+          fontSize: '20px',
+          background: '#f5d9fa',
+          fontWeight: 'bold',
+          borderRadius: '5px'
+        }} onClick={() => setFlip(!flip)}>
+          Click For More
+        </button>
+      </div>
+      <div style={{
+        width: '300px',
+        height: '200px',
+        background: '#fbd7f8',
+        fontSize: '20px',
+        color: 'blue',
+        margin: '20px',
+        borderRadius: '4px',
+        textAlign: 'center',
+        padding: '20px'
+      }}>
+        Temperature<br />
+        Humidity <br />
+        Real Feel: <br />
+        <button style={{
+          width: '150px',
+          padding: '10px',
+          fontSize: '20px',
+          background: '#f5d9fa',
+          fontWeight: 'bold',
+          borderRadius: '5px'
+        }} onClick={() => setFlip(!flip)}>Flip Back</button>
+      </div>
+    </ReactCardFlip>
+  );
+};
+
+export default FlipCard;
