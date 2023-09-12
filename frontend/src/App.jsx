@@ -8,7 +8,18 @@ import TopNavbar from './header_components/TopNavbar';
 import SearchBar from './header_components/SearchBar';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
+  const locationData = [
+    {
+      location: 'New York',
+      temperature: 80,
+      humidity: 55,
+      realFeel: 85,
+      isRainy: false,
+      isWindy: false,
+    },
+    //later on, add more location objects here
+  ];
 
   return (
     <>
@@ -19,7 +30,9 @@ function App() {
         <SearchBar />
       </div>
       <div>
-        <FlipCard />
+        {locationData.map((data, index) => (
+          <FlipCard key={index} card={data} />
+        ))}
       </div>
     </>
   )
