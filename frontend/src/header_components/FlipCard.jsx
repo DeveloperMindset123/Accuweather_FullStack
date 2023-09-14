@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import ReactCardFlip from "react-card-flip";
 import { WiDaySunny, WiRain, WiSnow, WiWindy, WiCloudy } from 'react-icons/wi';
+import './FlipCard.css';
 
 const FlipCard = ({card}) => {
   const [flip, setFlip] = useState(false);
@@ -18,21 +19,39 @@ const FlipCard = ({card}) => {
       return <WiCloudy size={40} color='gray' />;
     }
   };
+
+  const style = {  //we will use this code for styling the div, the code is the same as what we have within the div component, this is simply a better way to organize what we are working with
+    width: '200px',
+    height: '200px',
+    background: 'rgba(255,255,255,0.7)',
+    fontSize: '20px',
+    color: 'black',
+    margin: '20px',
+    marginTop: '10px',
+    borderRadius: '4px',
+    textAlign: 'center',
+    padding: '20px',
+  }
+
+  
+    /*  --> keep this for use of reference later
+    backgroundColor: '#f4511e',
+    border: 'none',
+    color: 'white',
+    padding: '10px 20px',
+    textAlign: 'center',
+    fontSize: '16px',
+    margin: '4px 2px',
+    opacity: '0.6',
+    transition: '0.3s',
+    display: 'inline-block',
+    textDecoration: 'none',
+    cursor: 'pointer', */
+
   return (
     <ReactCardFlip isFlipped={flip} flipDirection="vertical"
     >
-      <div style={{
-        width: "200px",
-        height: "200px",
-        background: "rgba(255,255,255,0.7)", //code for transparent background
-        fontSize: '20px',
-        color: 'black',
-        margin: '20px',
-        marginTop: '10px',
-        borderRadius: '4px',
-        textAlign: 'center',
-        padding: '20px',
-      }}>
+      <div style={style}>
         {/**Display location here */}
         {card.location}
         <br />
@@ -48,40 +67,16 @@ const FlipCard = ({card}) => {
         {/**Display real feel */}
         Real Feel: {card.realFeel}°F
         <br />
-        <button style={{
-          width: '150px',
-          padding: '10px',
-          fontSize: '20px',
-          background: '#f5d9fa',
-          fontWeight: 'bold',
-          borderRadius: '5px',
-          position: 'center',
-        }} onClick={() => setFlip(!flip)}>
+    
+        <button className='btn-flip' onClick={() => setFlip(!flip)}>
           Flip
         </button>
       </div>
-      <div style={{
-        width: '300px',
-        height: '200px',
-        background: '#fbd7f8',
-        fontSize: '20px',
-        color: 'blue',
-        margin: '20px',
-        borderRadius: '4px',
-        textAlign: 'center',
-        padding: '20px'
-      }}>
-        Temperature<br />
-        Humidity <br />
-        Real Feel: <br />
-        <button style={{
-          width: '150px',
-          padding: '10px',
-          fontSize: '20px',
-          background: '#f5d9fa',
-          fontWeight: 'bold',
-          borderRadius: '5px'
-        }} onClick={() => setFlip(!flip)}>Flip Back</button>
+      <div style={style}>
+        Pollen Count: <br />  {/**To be updated later */}
+        Air Quality Index: <br />  {/**To be updated later */}
+        UV Index: <br /> {/**To be updated later */}
+        <button className='btn-flip' onClick={() => setFlip(!flip)}>Flip Back</button>
       </div>
     </ReactCardFlip>
   );
