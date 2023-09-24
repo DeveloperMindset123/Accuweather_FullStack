@@ -1,11 +1,12 @@
 /* eslint-disable no-unused-vars */
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css';
 import FlipCard from './header_components/FlipCard';
 
 //import the components we will use here
 import TopNavbar from './header_components/TopNavbar';
 import SearchBar from './header_components/SearchBar';
+import MinutecastForecast from './header_components/MinutecastForecast';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -20,7 +21,20 @@ function App() {
     },
     //later on, add more location objects here
   ];
-
+  //const axios = require('axios');
+/*
+  useEffect(() => {
+    //Make a get request to the backend endpoint
+    axios.get('http://localhost:3000/get-geolocation-and-weather')
+      .then(response => {
+        //Log the response data in the console
+        console.log('Backend Response:', response.data);
+      })
+      .catch(error => {
+        //handle any errors
+        console.error('Error:', error);
+      });
+  }, []); //Empty dependancy array to run this effect only once */
   return (
     <>
       <div>
@@ -33,6 +47,9 @@ function App() {
         {locationData.map((data, index) => (
           <FlipCard key={index} card={data} />
         ))}
+      </div>
+      <div>
+        
       </div>
     </>
   )

@@ -1,6 +1,8 @@
-
+.complete-container {
+    margin-left: 20%;
+}
 .btn-flip {
-    width: 55%;
+    width: 53%;
     height: 20%;
     opacity: 1;
     outline: 0;
@@ -9,7 +11,7 @@
     position: auto;
     text-align: center;
     letter-spacing: 1px;
-    display: inline-block;
+    display: inline;
     text-decoration: none;
     text-transform: capitalize;
 

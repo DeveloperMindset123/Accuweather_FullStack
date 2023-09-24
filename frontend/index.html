@@ -4,11 +4,21 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link href="https://js.radar.com/v4.1.6/radar.css" rel="stylesheet">
+<script src="https://js.radar.com/v4.1.6/radar.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite + React</title>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+    <script src="https://js.radar.com/v4.1.7/radar.min.js"></script>
+    <script type="text/javascript">
+        Radar.initialize('prj_live_sk_61511524a15e0ee8c45d1340be91ccff301dd0ae', {
+          logLevel: 'error',
+          cacheLocationMinutes: '1',
+          desiredAccuracy: 'high',
+        });
+    </script>
   </body>
 </html>
