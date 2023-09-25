@@ -21,19 +21,24 @@ import 'radar-sdk-js/dist/radar.css'; */
  * GET requests are intended to retrieve data from a server and do not modify the server's state, on the other hand, POST requests are used to send data to the server for processing and may modify the server's state.
  */
 
+
+//api key of rapid api app created: 6b47efddb9mshc1034e0198ebb13p1fc09djsn994d19e09be3
 const express = require('express');
 const axios = require('axios');
 
 const hello = require('./routes/hello'); //import the routes folder
 const { getGeolocationData } = require('./routes/ip-geolocation');  //note: to call on this async function, I needed to wrap it in {} 
+const { getWeatherData } = require('./routes/weatherAPI'); 
+const { getIPAddress } = require('./routes/ipAddressAPI');
 
 const app = express();
 app.use(express.json());
 app.use('/hello', hello);
 
 //call on the async functon to execute the code
-getGeolocationData();
-
+getGeolocationData(); //call on the geolocation data first --> uncomment this line later
+getWeatherData();   //next, call on the weather data --> uncomment this line later
+getIPAddress();  //call on the getIPAdress function
 const PORT = process.env.PORT || 5500; // Set the desired port
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);

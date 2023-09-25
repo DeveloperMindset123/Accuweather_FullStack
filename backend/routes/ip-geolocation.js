@@ -3,12 +3,25 @@ const fs = require('fs');
 
 const outputFilePath = 'C:/Users/dasa5/OneDrive/Desktop/Accuweather_FullStack/backend/output/geolocationData.json'; // Define the output file path --> mote: I had to define the full path in order for it to work successfully
 
+//define the JSON file function to properly read a JSON file
+function getJSONData(filePath) {
+  const data = fs.readFileSync(filePath, 'utf-8');
+  return JSON.parse(data);
+}
+
+const getIPAddress = getJSONData('C:/Users/dasa5/OneDrive/Desktop/Accuweather_FullStack/backend/output/ipAddressLookup.json');
+
+const userIP = getIPAddress.ipString;
+
 
 const options = {
   method: 'GET',
   url: 'https://ip-geolocation-ipwhois-io.p.rapidapi.com/json/',
+  params: {
+    ip: `${userIP}` //this will serve as a placeholder, later on, I will replace this with an API call to call on the ip address instead
+  },
   headers: {
-    'X-RapidAPI-Key': '22a7d09ca5mshabc0d63e80619cap14b47djsn1ea0395dd048',
+    'X-RapidAPI-Key': '6b47efddb9mshc1034e0198ebb13p1fc09djsn994d19e09be3',
     'X-RapidAPI-Host': 'ip-geolocation-ipwhois-io.p.rapidapi.com'
   }
 };
